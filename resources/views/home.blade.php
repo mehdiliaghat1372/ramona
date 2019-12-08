@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/general.css?v11') }}">
     <link rel="stylesheet" href="{{ asset('css/slider.css?v6') }}">
-    <link rel="stylesheet" href="{{ asset('css/video-box.css?v6') }}">
+    <link rel="stylesheet" href="{{ asset('css/video-box.css?v8') }}">
     <link rel="icon" href="{{ asset('img/logo150.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('img/logo150.png') }}">
     <title>تلویزیون اینترنتی رامونا</title>
@@ -39,53 +39,58 @@
         <div class="col title"><h2>انیمیشن ها</h2></div>
     </div>
     <div class="row">
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center pt-2">
+            <a href="#" class="read-more">نمایش همه انیمیشن ها</a>
         </div>
     </div>
 </div>
@@ -96,53 +101,58 @@
         <div class="col title"><h2>سریال ها</h2></div>
     </div>
     <div class="row">
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
         </div>
-        <div class="col-video col-sm-6 col-md-4 col-lg-3">
+        <div class="video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
             <a href="#"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center pt-2">
+            <a href="#" class="read-more">نمایش همه سریال ها</a>
         </div>
     </div>
 </div>
