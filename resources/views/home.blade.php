@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.4.1/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick-theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/general.css?v6') }}">
-    <link rel="stylesheet" href="{{ asset('css/slider.css?v2') }}">
-    <link rel="stylesheet" href="{{ asset('css/video-box.css?v3') }}">
-    <title>PhpMyTube!</title>
+    <link rel="stylesheet" href="{{ asset('css/general.css?v11') }}">
+    <link rel="stylesheet" href="{{ asset('css/slider.css?v6') }}">
+    <link rel="stylesheet" href="{{ asset('css/video-box.css?v6') }}">
+    <link rel="icon" href="{{ asset('img/logo150.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('img/logo150.png') }}">
+    <title>تلویزیون اینترنتی رامونا</title>
 </head>
 <body>
 
@@ -17,11 +19,14 @@
     <div class="container-fluid rtl">
         <div class="row">
             <div class="col-md-6">
-                <img src="{{ asset('img/logo128.png') }}" alt="Logo">
-                <h1>رامونا</h1>
+                <a href="/"><img src="{{ asset('img/logo150.png') }}" alt="Logo"></a>
+                <h1><a href="/">تلویزیون اینترنتی رامونا</a></h1>
             </div>
             <div class="col-md-6">
-                <a href="#" class="btn">ورود / ثبت نام</a>
+                <a href="#" class="sign">
+                    <i class="fas fa-user"></i>
+                    <span>ورود / ثبت نام</span>
+                </a>
             </div>
         </div>
     </div>
@@ -44,43 +49,51 @@
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
     </div>
 </div>
 
-<div class="container mt-3 video-box">
+
+<div class="container video-box mt-5">
     <div class="row">
-        <div class="col title"><h2>انیمیشن ها</h2></div>
+        <div class="col title"><h2>سریال ها</h2></div>
     </div>
     <div class="row">
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
@@ -93,36 +106,43 @@
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
         <div class="col-video col-sm-6 col-md-4 col-lg-3">
             <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
             <p>فیلم پدرخوانده</p>
             <p>درام مافیایی - سال ۱۹۷۱</p>
+            <a href="#"></a>
         </div>
     </div>
 </div>
@@ -130,9 +150,24 @@
 <footer class="rtl mt-5">
     <hr>
     <div class="row">
-        <div class="col text-center my-3">
-            <img src="{{ asset('img/logo128.png') }}" class="mb-3" alt="Logo">
-            <p class="">تمامی حقوق مادی و معنوی این وبسایت ازآن PhpMyTube می‌باشد.</p>
+        <div class="col text-center">
+            <img src="{{ asset('img/logo150.png') }}" class="mb-3" alt="Logo">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <p>
+                <a href="#">خانه</a> -
+                <a href="#">ورود کاربران</a> -
+                <a href="#">نام نویسی</a> -
+                <a href="#">درباره ما</a> -
+                <a href="#">ارتباط با ما</a>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <p>تمامی حقوق مادی و معنوی این وبسایت ازآن تلویزیون اینترنتی رامونا می‌باشد.</p>
         </div>
     </div>
 </footer>
@@ -142,7 +177,8 @@
 <script src="{{ asset('vendor/popper.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap-4.4.1/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/slick-1.8.1/slick.min.js') }}"></script>
-<script src="{{ asset('js/slider.js') }}"></script>
+<script src="https://kit.fontawesome.com/a2d6e8a0a4.js" crossorigin="anonymous"></script>
+<script src="{{ asset('js/slider.js?v2') }}"></script>
 
 </body>
 </html>
