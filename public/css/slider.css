@@ -56,5 +56,6 @@
 }
 
 .slider-container .slider .slide .content a:hover {
-    background: #FFA03B;
+    background: #872f84;
+    color: white;
 }

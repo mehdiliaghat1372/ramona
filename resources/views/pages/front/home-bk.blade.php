@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.4.1/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick-theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/general.css?v11') }}">
-    <link rel="stylesheet" href="{{ asset('css/slider.css?v6') }}">
-    <link rel="stylesheet" href="{{ asset('css/video-box.css?v8') }}">
-    <link rel="icon" href="{{ asset('img/logo150.png') }}">
-    <link rel="apple-touch-icon" href="{{ asset('img/logo150.png') }}">
+    <link rel="stylesheet" href="{{ asset('css/general.css?v27') }}">
+    <link rel="stylesheet" href="{{ asset('css/slider.css?v7') }}">
+    <link rel="stylesheet" href="{{ asset('css/video-box.css?v12') }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
     <title>تلویزیون اینترنتی رامونا</title>
 </head>
 <body>
@@ -19,20 +19,41 @@
     <div class="container-fluid rtl">
         <div class="row">
             <div class="col-md-6">
-                <a href="/"><img src="{{ asset('img/logo150.png') }}" alt="Logo"></a>
-                <h1><a href="/">تلویزیون اینترنتی رامونا</a></h1>
+                <a href="/"><img src="{{ asset('img/logo.png') }}" alt="logo"></a>
+                <div class="categories">
+                    <span>دسته بندی</span>
+                    <i class="fas fa-sort-down"></i>
+                    <ul>
+                        <li><a href="#">انیمیشن</a></li>
+                        <li><a href="#">سریال</a></li>
+                        <li><a href="#">کمدی</a></li>
+                        <li><a href="#">اکشن</a></li>
+                        <li><a href="#">درام</a></li>
+                        <li><a href="#">پورن</a></li>
+                        <li><a href="#">ترسناک</a></li>
+                        <li><a href="#">عاشقانه</a></li>
+                        <li><a href="#">هندی</a></li>
+                        <li><a href="#">تخیلی</a></li>
+                        <li><a href="#">تخمی</a></li>
+                        <li><a href="#">فانتزی</a></li>
+                        <li><a href="#">جنایی</a></li>
+                        <li><a href="#">ترسناک</a></li>
+                        <li><a href="#">درام</a></li>
+                        <li><a href="#">ترسناک</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="col-md-6">
                 <a href="#" class="sign">
                     <i class="fas fa-user"></i>
-                    <span>ورود / ثبت نام</span>
+                    <span>ورود کاربران</span>
                 </a>
             </div>
         </div>
     </div>
 </header>
 
-@include('components.slider')
+@include('pages.front.__slider')
 
 <div class="container video-box">
     <div class="row">
@@ -158,10 +179,9 @@
 </div>
 
 <footer class="rtl mt-5">
-    <hr>
     <div class="row">
         <div class="col text-center">
-            <img src="{{ asset('img/logo150.png') }}" class="mb-3" alt="Logo">
+            <img src="{{ asset('img/logo.png') }}" class="mb-3" alt="Logo">
         </div>
     </div>
     <div class="row">
