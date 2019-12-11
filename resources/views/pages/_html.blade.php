@@ -7,6 +7,7 @@
     @show
     @section('head-links')
         <link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.4.1/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/general.css?v1') }}">
         <link rel="icon" href="{{ asset('favicon.ico') }}">
         <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
     @show

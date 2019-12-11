@@ -1,4 +1,6 @@
-@extends('pages.front._primary')
+@extends('pages.front._layout')
+
+@section('title', 'تلویزیون اینترنتی')
 
 @section('head-links')
     @parent

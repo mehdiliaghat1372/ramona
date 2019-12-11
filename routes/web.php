@@ -11,4 +11,10 @@
 |
 */
 
-Route::get('/', 'HomeController@show');
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', 'Front\HomeController@show');
+Route::get('/categories', 'Front\CategoriesController@show');
+Route::get('/videos', 'Front\VideosController@show');
+
+Route::get('/auth/sign-in', 'Auth\SignInController@show');
