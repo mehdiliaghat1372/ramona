@@ -12,7 +12,11 @@
                 <a href="/">
                     <img src="{{ asset('img/logo-big.png') }}" class="img-fluid" alt="Logo">
                 </a>
-                <div class="alert alert-danger">خطا</div>
+
+                @if(session('error'))
+                    <div class="alert alert-danger rtl">{{ session('error') }}</div>
+                @endif
+
                 @yield('main')
             </div>
         </div>

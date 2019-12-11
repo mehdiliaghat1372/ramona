@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <a href="#" class="sign">
+                <a href="{{ route('auth.sign-in') }}" class="sign">
                     <i class="fas fa-user"></i>
                     <span>ورود کاربران</span>
                 </a>

@@ -7,8 +7,8 @@
     <div class="row">
         <div class="col text-center">
             <p>
-                <a href="#">خانه</a> -
-                <a href="#">ورود کاربران</a> -
+                <a href="/">خانه</a> -
+                <a href="{{ route('auth.sign-in') }}">ورود کاربران</a> -
                 <a href="#">نام نویسی</a> -
                 <a href="#">درباره ما</a> -
                 <a href="#">ارتباط با ما</a>

@@ -142,6 +142,13 @@ return [
             'database' => env('REDIS_CACHE_DB', 1),
         ],
 
+        'session' => [
+            'url' => env('REDIS_SESSION_URL'),
+            'host' => env('REDIS_SESSION_HOST', '127.0.0.1'),
+            'password' => env('REDIS_SESSION_PASSWORD', null),
+            'port' => env('REDIS_SESSION_PORT', 6379),
+            'database' => env('REDIS_SESSION_DB', 1),
+        ],
     ],
 
 ];

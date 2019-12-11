@@ -4,7 +4,6 @@
 
 @section('head-links')
     @parent
-
     <link rel="stylesheet" href="{{ asset('css/video-box.css?v12') }}">
 @endsection
 
