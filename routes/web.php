@@ -53,5 +53,9 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'Admin\UsersController@update',
             'as' => 'admin.users.update'
         ]);
+        Route::get('/users/{user}/delete', [
+            'uses' => 'Admin\UsersController@delete',
+            'as' => 'admin.users.delete'
+        ])->where(['user' => '[0-9]+']);
     });
 });

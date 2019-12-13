@@ -45,7 +45,8 @@
                             <td>
                                 <a href="{{ route('admin.users.edit', $user->id) }}"
                                    class="btn btn-sm btn-info">ویرایش</a>
-                                <a href="#" class="btn btn-sm btn-danger">پاک‌کردن</a>
+                                <a href="{{ route('admin.users.delete', $user) }}"
+                                   class="btn btn-sm btn-danger">پاک‌کردن</a>
                             </td>
                         </tr>
                     @endforeach

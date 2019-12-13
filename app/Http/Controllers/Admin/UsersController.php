@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
+use Exception;
 use Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -48,6 +49,7 @@ class UsersController extends Controller
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
+        $user->email_verified_at = now();
         $user->password = Hash::make($request->input('password'));
         $user->save();
 
@@ -87,5 +89,17 @@ class UsersController extends Controller
         $user->update($request->only(['first_name', 'last_name', 'email']));
 
         return back()->with('success', trans('users.updated'));
+    }
+
+    /**
+     * @param $user
+     * @return RedirectResponse
+     * @throws Exception
+     */
+    public function delete(int $user)
+    {
+        User::whereId($user)->delete();
+
+        return back()->with('success', trans('users.deleted'));
     }
 }
