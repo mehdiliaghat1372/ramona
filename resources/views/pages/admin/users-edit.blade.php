@@ -21,14 +21,14 @@
                     <div class="form-group">
                         <label>نام:</label>
                         <input type="text" name="first_name" value="{{ $user->first_name }}" class="form-control"
-                               title="" placeholder="نام">
+                               title="" placeholder="نام" required>
                     </div>
                 </div>
                 <div class="col col-md-6">
                     <div class="form-group">
                         <label>نام خانوادگی:</label>
                         <input type="text" name="last_name" value="{{ $user->last_name }}" class="form-control" title=""
-                               placeholder="نام خانوادگی">
+                               placeholder="نام خانوادگی" required>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label>ایمیل:</label>
                         <input type="email" name="email" value="{{ $user->email }}" class="form-control ltr" title=""
-                               placeholder="ایمیل">
+                               placeholder="ایمیل" required>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div class="col col-md-6">
                     <div class="form-group">
                         <label>نقش:</label>
-                        <select name="role" class="form-control" title="">
+                        <select name="role" class="form-control" title="" required>
                             @foreach($roles as $role)
                                 <option {{ $role->id == $user->roles[0]->id ? 'selected' : '' }}
                                         value="{{ $role->id }}">{{ trans('roles.' . $role->slug) }}</option>

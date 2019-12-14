@@ -6,7 +6,7 @@
 @show
 
 @section('content')
-    <div class="container mt-5">
+    <div class="container-fluid mt-3">
         <div class="row">
             <main class="col col-md-9">
                 @yield('breadcrumb')
@@ -47,8 +47,8 @@
                         <span>کاربران</span>
                         <i class="fas fa-users"></i>
                     </a>
-                    <a class="list-group-item list-group-item-action" href="#">
-                        <span>دسته‌بندی‌ها</span>
+                    <a class="list-group-item list-group-item-action" href="{{ route('admin.categories.index') }}">
+                        <span>دسته‌بندی‌</span>
                         <i class="fas fa-sitemap"></i>
                     </a>
                     <a class="list-group-item list-group-item-action" href="#">

@@ -20,9 +20,10 @@
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <td>شناسه</td>
+                        <td>#</td>
                         <td>نام</td>
                         <td>نام خانوادگی</td>
+                        <td>ایمیل</td>
                         <td>نقش</td>
                         <td>زمان نام‌نویسی</td>
                         <td>گزینه‌ها</td>
@@ -34,6 +35,7 @@
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->first_name }}</td>
                             <td>{{ $user->last_name }}</td>
+                            <td>{{ $user->email }}</td>
                             <td>
                                 <ul class="mb-0 p-0">
                                     @foreach($user->roles as $role)
@@ -43,10 +45,12 @@
                             </td>
                             <td>{{ jDate($user->created_at) }}</td>
                             <td>
-                                <a href="{{ route('admin.users.edit', $user->id) }}"
-                                   class="btn btn-sm btn-info">ویرایش</a>
-                                <a href="{{ route('admin.users.delete', $user) }}"
-                                   class="btn btn-sm btn-danger">پاک‌کردن</a>
+                                <a href="{{ route('admin.users.edit', $user) }}"
+                                   class="btn btn-sm btn-info mb-1">ویرایش</a>
+                                @if($user->id != auth()->id())
+                                    <a href="{{ route('admin.users.delete', $user) }}"
+                                       class="btn btn-sm btn-danger">پاک‌کردن</a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach

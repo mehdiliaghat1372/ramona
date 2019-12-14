@@ -11,9 +11,18 @@
 |
 */
 
-Route::get('/', 'Front\HomeController@show');
-Route::get('/categories', 'Front\CategoriesController@show');
-Route::get('/videos', 'Front\VideosController@show');
+Route::get('/', [
+    'uses' => 'Front\HomeController@show',
+    'as' => 'home',
+]);
+Route::get('/categories/{category}', [
+    'uses' => 'Front\CategoriesController@show',
+    'as' => 'categories.show',
+]);
+Route::get('/videos', [
+    'uses' => 'Front\VideosController@show',
+    'as' => 'videos.show',
+]);
 
 Route::get('/auth/sign-in', [
     'uses' => 'Auth\SignInController@show',
@@ -33,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
             'uses' => 'Admin\DashboardController@show',
             'as' => 'admin.dashboard',
         ]);
+
         Route::get('/users', [
             'uses' => 'Admin\UsersController@index',
             'as' => 'admin.users.index',
@@ -56,6 +66,31 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/users/{user}/delete', [
             'uses' => 'Admin\UsersController@delete',
             'as' => 'admin.users.delete'
+        ])->where(['user' => '[0-9]+']);
+
+        Route::get('/categories', [
+            'uses' => 'Admin\CategoriesController@index',
+            'as' => 'admin.categories.index',
+        ]);
+        Route::get('/categories/create', [
+            'uses' => 'Admin\CategoriesController@create',
+            'as' => 'admin.categories.create',
+        ]);
+        Route::post('/categories', [
+            'uses' => 'Admin\CategoriesController@store',
+            'as' => 'admin.categories.store'
+        ]);
+        Route::get('/categories/{category}/edit', [
+            'uses' => 'Admin\CategoriesController@edit',
+            'as' => 'admin.categories.edit',
+        ]);
+        Route::put('/categories/{category}', [
+            'uses' => 'Admin\CategoriesController@update',
+            'as' => 'admin.categories.update'
+        ]);
+        Route::get('/categories/{category}/delete', [
+            'uses' => 'Admin\CategoriesController@delete',
+            'as' => 'admin.categories.delete'
         ])->where(['user' => '[0-9]+']);
     });
 });
