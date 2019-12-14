@@ -26,6 +26,8 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Category whereTitle($value)
  * @method static Builder|Category whereUpdatedAt($value)
  * @mixin Eloquent
+ * @property int|null $parent_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereParentId($value)
  */
 class Category extends Model
 {

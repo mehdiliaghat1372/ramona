@@ -42,6 +42,7 @@ class CategoriesController extends Controller
         $category = new Category();
         $category->title = $request->input('title');
         $category->slug = $request->input('slug');
+        $category->parent_id = null;
         $category->description = $request->input('description');
         $category->save();
 
