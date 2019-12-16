@@ -7,11 +7,22 @@ use App\Models\Category;
 
 class CategoriesController extends Controller
 {
-    public function show(Category $category)
+    public function show(int $category)
     {
+        if ($category == 0) {
+            $videos = [];
+            $title = trans('videos.all');
+        } else {
+            /** @var Category $categoryModel */
+            $categoryModel = Category::findOrFail($category);
+            $title = $categoryModel->title;
+            $videos = [];
+        }
+
         return view('pages.front.category', [
             'categories' => Category::all(),
-            'category' => $category,
+            'videos' => $videos,
+            'title' => $title,
         ]);
     }
 }

@@ -51,7 +51,7 @@
                         <span>دسته‌بندی‌</span>
                         <i class="fas fa-sitemap"></i>
                     </a>
-                    <a class="list-group-item list-group-item-action" href="#">
+                    <a class="list-group-item list-group-item-action" href="{{ route('admin.videos.index') }}">
                         <span>ویدئو‌ها</span>
                         <i class="fas fa-photo-video"></i>
                     </a>

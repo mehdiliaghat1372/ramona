@@ -14,7 +14,7 @@ class CategoriesController extends Controller
 {
     public function index()
     {
-        $categories = Category::paginate(10);
+        $categories = Category::orderBy('title')->paginate(10);
 
         return view('pages.admin.categories-index', [
             'categories' => $categories,
@@ -35,13 +35,11 @@ class CategoriesController extends Controller
     {
         $this->validate($request, [
             'title' => ['required', 'max:255', 'unique:categories'],
-            'slug' => ['required', 'max:255', 'unique:categories'],
             'description' => ['required', 'max:1024'],
         ]);
 
         $category = new Category();
         $category->title = $request->input('title');
-        $category->slug = $request->input('slug');
         $category->parent_id = null;
         $category->description = $request->input('description');
         $category->save();
@@ -66,11 +64,10 @@ class CategoriesController extends Controller
     {
         $this->validate($request, [
             'title' => ['required', 'max:255', Rule::unique('categories')->ignore($category->id)],
-            'slug' => ['required', 'max:255', Rule::unique('categories')->ignore($category->id)],
             'description' => ['required', 'max:1024'],
         ]);
 
-        $category->update($request->only(['title', 'slug', 'description']));
+        $category->update($request->only(['title', 'description']));
 
         return back()->with('success', trans('categories.updated'));
     }
@@ -80,7 +77,7 @@ class CategoriesController extends Controller
      * @return RedirectResponse
      * @throws Exception
      */
-    public function delete(int $category)
+    public function destroy(int $category)
     {
         Category::whereId($category)->delete();
 

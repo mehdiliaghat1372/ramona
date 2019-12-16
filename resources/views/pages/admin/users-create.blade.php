@@ -56,7 +56,7 @@
                         <select name="role" class="form-control" title="">
                             <option value="" selected disabled>نقش</option>
                             @foreach($roles as $role)
-                                <option value="{{ $role->id }}">{{ trans('roles.' . $role->slug) }}</option>
+                                <option value="{{ $role->id }}">{{ $role->title }}</option>
                             @endforeach
                         </select>
                     </div>

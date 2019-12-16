@@ -23,7 +23,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $numeric = '[0-9]+';
+
+        Route::pattern('user', $numeric);
+        Route::pattern('category', $numeric);
 
         parent::boot();
     }

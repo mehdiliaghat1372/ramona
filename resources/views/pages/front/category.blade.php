@@ -1,6 +1,6 @@
 @extends('pages.front._layout')
 
-@section('title', 'انیمیشن ها')
+@section('title', $title)
 
 @section('head-links')
     @parent
@@ -10,7 +10,7 @@
 @section('main')
     <div class="container video-box">
         <div class="row">
-            <div class="col title"><h2>{{ $category->title }}</h2></div>
+            <div class="col title"><h2>{{ $title }}</h2></div>
         </div>
         <div class="row">
             <div class="video col-sm-6 col-md-4 col-lg-3">

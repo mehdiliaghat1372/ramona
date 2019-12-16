@@ -6,6 +6,7 @@ use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\DatabaseNotification;
 use Illuminate\Notifications\DatabaseNotificationCollection;
@@ -24,12 +25,17 @@ use Illuminate\Support\Carbon;
  * @property string $password
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * @property string|null $deleted_at
+ * @property Carbon|null $deleted_at
  * @property-read DatabaseNotificationCollection|DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read Collection|Role[] $roles
+ * @property-read int|null $roles_count
+ * @method static bool|null forceDelete()
  * @method static Builder|User newModelQuery()
  * @method static Builder|User newQuery()
+ * @method static \Illuminate\Database\Query\Builder|User onlyTrashed()
  * @method static Builder|User query()
+ * @method static bool|null restore()
  * @method static Builder|User whereCreatedAt($value)
  * @method static Builder|User whereDeletedAt($value)
  * @method static Builder|User whereEmail($value)
@@ -39,13 +45,13 @@ use Illuminate\Support\Carbon;
  * @method static Builder|User whereLastName($value)
  * @method static Builder|User wherePassword($value)
  * @method static Builder|User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|User withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|User withoutTrashed()
  * @mixin Eloquent
- * @property-read Collection|Role[] $roles
- * @property-read int|null $roles_count
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.

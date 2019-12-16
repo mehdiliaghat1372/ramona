@@ -39,17 +39,21 @@
                             <td>
                                 <ul class="mb-0 p-0">
                                     @foreach($user->roles as $role)
-                                        <li>{{ trans('roles.' . $role->slug) }}</li>
+                                        <li>{{ $role->title }}</li>
                                     @endforeach
                                 </ul>
                             </td>
                             <td>{{ jDate($user->created_at) }}</td>
                             <td>
                                 <a href="{{ route('admin.users.edit', $user) }}"
-                                   class="btn btn-sm btn-info mb-1">ویرایش</a>
+                                   class="btn btn-sm btn-info">ویرایش</a>
                                 @if($user->id != auth()->id())
-                                    <a href="{{ route('admin.users.delete', $user) }}"
-                                       class="btn btn-sm btn-danger">پاک‌کردن</a>
+                                    <form class="form-inline d-inline-block" method="post"
+                                          action="{{ route('admin.users.destroy', $user) }}">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-sm btn-danger">پاک‌کردن</button>
+                                    </form>
                                 @endif
                             </td>
                         </tr>

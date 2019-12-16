@@ -24,13 +24,6 @@
                                title="" placeholder="عنوان">
                     </div>
                 </div>
-                <div class="col col-md-6">
-                    <div class="form-group">
-                        <label>نامک:</label>
-                        <input type="text" name="slug" value="{{ $category->slug }}" class="form-control" title=""
-                               required placeholder="نامک">
-                    </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col">
@@ -44,7 +37,7 @@
             <div class="row">
                 <div class="col">
                     <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="افزودن">
+                        <input type="submit" class="btn btn-primary" value="بروزرسانی">
                     </div>
                 </div>
             </div>

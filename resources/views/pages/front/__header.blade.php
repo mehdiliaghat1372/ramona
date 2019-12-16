@@ -10,6 +10,7 @@
                         @foreach($categories as $c)
                             <li><a href="{{ route('categories.show', $c) }}">{{ $c->title }}</a></li>
                         @endforeach
+                        <li><a href="{{ route('categories.show', 0) }}">همه</a></li>
                     </ul>
                 </div>
             </div>

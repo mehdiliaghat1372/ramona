@@ -63,7 +63,7 @@
                         <select name="role" class="form-control" title="" required>
                             @foreach($roles as $role)
                                 <option {{ $role->id == $user->roles[0]->id ? 'selected' : '' }}
-                                        value="{{ $role->id }}">{{ trans('roles.' . $role->slug) }}</option>
+                                        value="{{ $role->id }}">{{ $role->title }}</option>
                             @endforeach
                         </select>
                     </div>

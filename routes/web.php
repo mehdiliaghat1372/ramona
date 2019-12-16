@@ -37,60 +37,16 @@ Route::get('/auth/sign-out', [
 ]);
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::group(['prefix' => '/admin'], function () {
+    // Admin
+    Route::group(['prefix' => '/admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
         Route::get('/', [
-            'uses' => 'Admin\DashboardController@show',
-            'as' => 'admin.dashboard',
+            'uses' => 'DashboardController@show',
+            'as' => 'dashboard',
         ]);
-
-        Route::get('/users', [
-            'uses' => 'Admin\UsersController@index',
-            'as' => 'admin.users.index',
+        Route::resources([
+            'users' => 'UsersController',
+            'categories' => 'CategoriesController',
+            'videos' => 'VideosController',
         ]);
-        Route::get('/users/create', [
-            'uses' => 'Admin\UsersController@create',
-            'as' => 'admin.users.create',
-        ]);
-        Route::post('/users', [
-            'uses' => 'Admin\UsersController@store',
-            'as' => 'admin.users.store'
-        ]);
-        Route::get('/users/{user}/edit', [
-            'uses' => 'Admin\UsersController@edit',
-            'as' => 'admin.users.edit',
-        ]);
-        Route::put('/users/{user}', [
-            'uses' => 'Admin\UsersController@update',
-            'as' => 'admin.users.update'
-        ]);
-        Route::get('/users/{user}/delete', [
-            'uses' => 'Admin\UsersController@delete',
-            'as' => 'admin.users.delete'
-        ])->where(['user' => '[0-9]+']);
-
-        Route::get('/categories', [
-            'uses' => 'Admin\CategoriesController@index',
-            'as' => 'admin.categories.index',
-        ]);
-        Route::get('/categories/create', [
-            'uses' => 'Admin\CategoriesController@create',
-            'as' => 'admin.categories.create',
-        ]);
-        Route::post('/categories', [
-            'uses' => 'Admin\CategoriesController@store',
-            'as' => 'admin.categories.store'
-        ]);
-        Route::get('/categories/{category}/edit', [
-            'uses' => 'Admin\CategoriesController@edit',
-            'as' => 'admin.categories.edit',
-        ]);
-        Route::put('/categories/{category}', [
-            'uses' => 'Admin\CategoriesController@update',
-            'as' => 'admin.categories.update'
-        ]);
-        Route::get('/categories/{category}/delete', [
-            'uses' => 'Admin\CategoriesController@delete',
-            'as' => 'admin.categories.delete'
-        ])->where(['user' => '[0-9]+']);
     });
 });

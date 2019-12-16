@@ -22,12 +22,6 @@
                                title="" placeholder="عنوان">
                     </div>
                 </div>
-                <div class="col col-md-6">
-                    <div class="form-group">
-                        <input type="text" name="slug" value="{{ old('slug') }}" class="form-control" title=""
-                               required placeholder="نامک">
-                    </div>
-                </div>
             </div>
             <div class="row">
                 <div class="col">
@@ -53,10 +47,6 @@
     <script>
         $(document).ready(function () {
             $('aside .list-group-item-action[href="{{ route('admin.categories.index') }}"]').addClass('active');
-
-            $('input[name=title]').on('change keyup', function () {
-                $('input[name=slug]').val($(this).val().replace(' ', '-'))
-            });
         });
     </script>
 @endsection

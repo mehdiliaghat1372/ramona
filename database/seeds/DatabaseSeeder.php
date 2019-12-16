@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // Create the admin role
-        $role = Role::whereSlug('admin')->firstOrCreate([
-            'slug' => 'admin'
+        $role = Role::whereId(1)->firstOrCreate([
+            'title' => trans('general.admin')
         ]);
 
         // Create an admin user

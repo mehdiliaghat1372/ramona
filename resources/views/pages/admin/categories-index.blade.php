@@ -22,7 +22,6 @@
                     <tr>
                         <td>#</td>
                         <td>عنوان</td>
-                        <td>نامک</td>
                         <td>گزینه‌ها</td>
                     </tr>
                     </thead>
@@ -31,12 +30,15 @@
                         <tr>
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->title }}</td>
-                            <td>{{ $category->slug }}</td>
                             <td>
                                 <a href="{{ route('admin.categories.edit', $category) }}"
-                                   class="btn btn-sm btn-info mb-1">ویرایش</a>
-                                <a href="{{ route('admin.categories.delete', $category) }}"
-                                   class="btn btn-sm btn-danger">پاک‌کردن</a>
+                                   class="btn btn-sm btn-info">ویرایش</a>
+                                <form class="form-inline d-inline-block" method="post"
+                                      action="{{ route('admin.categories.destroy', $category) }}">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-sm btn-danger">پاک‌کردن</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

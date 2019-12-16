@@ -16,7 +16,7 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $users = User::paginate(10);
+        $users = User::orderBy('last_name')->paginate(10);
 
         return view('pages.admin.users-index', [
             'users' => $users,
@@ -96,7 +96,7 @@ class UsersController extends Controller
      * @return RedirectResponse
      * @throws Exception
      */
-    public function delete(int $user)
+    public function destroy(int $user)
     {
         User::whereId($user)->delete();
 
