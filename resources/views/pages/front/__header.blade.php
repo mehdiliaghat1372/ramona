@@ -7,22 +7,9 @@
                     <span>دسته بندی</span>
                     <i class="fas fa-sort-down"></i>
                     <ul>
-                        <li><a href="#">انیمیشن</a></li>
-                        <li><a href="#">سریال</a></li>
-                        <li><a href="#">کمدی</a></li>
-                        <li><a href="#">اکشن</a></li>
-                        <li><a href="#">درام</a></li>
-                        <li><a href="#">پورن</a></li>
-                        <li><a href="#">ترسناک</a></li>
-                        <li><a href="#">عاشقانه</a></li>
-                        <li><a href="#">هندی</a></li>
-                        <li><a href="#">تخیلی</a></li>
-                        <li><a href="#">تخمی</a></li>
-                        <li><a href="#">فانتزی</a></li>
-                        <li><a href="#">جنایی</a></li>
-                        <li><a href="#">ترسناک</a></li>
-                        <li><a href="#">درام</a></li>
-                        <li><a href="#">ترسناک</a></li>
+                        @foreach($categories as $c)
+                            <li><a href="{{ route('categories.show', $c) }}">{{ $c->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

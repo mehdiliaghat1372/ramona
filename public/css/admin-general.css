@@ -1,1 +1,12 @@
+.breadcrumb {
+    direction: rtl;
+    text-align: right;
+}
 
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    color: #6c757d;
+    content: "/";
+}

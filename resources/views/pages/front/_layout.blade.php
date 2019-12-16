@@ -2,7 +2,7 @@
 
 @section('head-links')
     @parent
-    <link rel="stylesheet" href="{{ asset('css/front.css?v1') }}">
+    <link rel="stylesheet" href="{{ asset('css/front.css?v2') }}">
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slider.css?v7') }}">

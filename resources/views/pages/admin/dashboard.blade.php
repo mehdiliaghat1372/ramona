@@ -2,9 +2,16 @@
 
 @section('title', 'داشبورد')
 
+@section('breadcrumb')
+    <nav>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active">@yield('title')</li>
+        </ol>
+    </nav>
+@endsection
+
 @section('panel')
     <div class="card">
-        <div class="card-header">@yield('title')</div>
         <div class="card-body rtl">
             <p class="card-text">خوش آمدید!</p>
             <p class="card-text">از منوی اصلی می‌توانید بخش های قابل مدیریت سایت را مشاهده کنید.</p>
