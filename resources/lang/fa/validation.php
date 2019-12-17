@@ -41,7 +41,7 @@ return [
     'distinct' => 'The :attribute field has a duplicate value.',
     'email' => 'فرمت فیلد :attribute نادرست است.',
     'ends_with' => 'The :attribute must end with one of the following: :values',
-    'exists' => 'The selected :attribute is invalid.',
+    'exists' => 'فیلد :attribute نادرست است.',
     'file' => 'The :attribute must be a file.',
     'filled' => 'The :attribute field must have a value.',
     'gt' => [
@@ -115,7 +115,7 @@ return [
     'timezone' => 'The :attribute must be a valid zone.',
     'unique' => 'این :attribute پیش از این ثبت شده است.',
     'uploaded' => 'The :attribute failed to upload.',
-    'url' => 'The :attribute format is invalid.',
+    'url' => 'فیلد :attribute باید یک آدرس اینترنتی معتبر باشد.',
     'uuid' => 'The :attribute must be a valid UUID.',
 
     /*
@@ -152,6 +152,11 @@ return [
         'email' => 'ایمیل',
         'password' => 'گذرواژه',
         'role' => 'نقش',
+        'url' => 'آدرس اینترنتی',
+        'thumbnail' => 'آدرس بندانگشتی',
+        'category' => 'دسته',
+        'title' => 'عنوان',
+        'content' => 'محتوا',
     ],
 
 ];

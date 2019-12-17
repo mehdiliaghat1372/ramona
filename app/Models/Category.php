@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Carbon;
 
@@ -18,6 +20,8 @@ use Illuminate\Support\Carbon;
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
  * @property Carbon|null $deleted_at
+ * @property-read Collection|Video[] $videos
+ * @property-read int|null $videos_count
  * @method static bool|null forceDelete()
  * @method static Builder|Category newModelQuery()
  * @method static Builder|Category newQuery()
@@ -40,4 +44,12 @@ class Category extends Model
     use SoftDeletes;
 
     public $fillable = ['title', 'description'];
+
+    /**
+     * @return BelongsToMany
+     */
+    public function videos()
+    {
+        return $this->belongsToMany(Video::class);
+    }
 }

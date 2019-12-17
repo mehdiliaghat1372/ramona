@@ -22,11 +22,38 @@
                     <tr>
                         <td>#</td>
                         <td>عنوان</td>
-                        <td>نامک</td>
+                        <td>دسته</td>
+                        <td>ناشر</td>
+                        <td>زمان نشر</td>
                         <td>گزینه‌ها</td>
                     </tr>
                     </thead>
                     <tbody>
+                    @foreach($videos as $video)
+                        <tr>
+                            <td>{{ $video->id }}</td>
+                            <td>{{ $video->title }}</td>
+                            <td>
+                                <ul class="mb-0 p-0">
+                                    @foreach($video->categories as $category)
+                                        <li>{{ $category->title }}</li>
+                                    @endforeach
+                                </ul>
+                            </td>
+                            <td>{{ $video->author->first_name . ' ' . $video->author->last_name }}</td>
+                            <td>{{ jDate($video->created_at) }}</td>
+                            <td>
+                                <a href="{{ route('admin.videos.edit', $video) }}"
+                                   class="btn btn-sm btn-info">ویرایش</a>
+                                <form class="form-inline d-inline-block" method="post"
+                                      action="{{ route('admin.videos.destroy', $video) }}">
+                                    @csrf
+                                    @method('delete')
+                                    <button type="submit" class="btn btn-sm btn-danger">پاک‌کردن</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

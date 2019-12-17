@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
 
@@ -25,6 +26,8 @@ use Illuminate\Support\Carbon;
  * @property-read Collection|VideoAttribute[] $attributes
  * @property-read int|null $attributes_count
  * @property-read User $author
+ * @property-read Collection|Category[] $categories
+ * @property-read int|null $categories_count
  * @method static Builder|Video newModelQuery()
  * @method static Builder|Video newQuery()
  * @method static Builder|Video query()
@@ -55,5 +58,13 @@ class Video extends Model
     public function attributes()
     {
         return $this->hasMany(VideoAttribute::class);
+    }
+
+    /**
+     * @return BelongsToMany
+     */
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
     }
 }

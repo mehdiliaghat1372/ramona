@@ -33,7 +33,7 @@
                 <div class="col col-md-6">
                     <div class="form-group">
                         <input type="email" name="email" value="{{ old('email') }}" class="form-control ltr" title=""
-                               placeholder="ایمیل">
+                               placeholder="ایمیل" required>
                     </div>
                 </div>
             </div>
