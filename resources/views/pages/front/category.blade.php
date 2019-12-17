@@ -13,73 +13,23 @@
             <div class="col title"><h2>{{ $title }}</h2></div>
         </div>
         <div class="row">
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
-            <div class="video col-sm-6 col-md-4 col-lg-3">
-                <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
-                <p>فیلم پدرخوانده</p>
-                <p>درام مافیایی - سال ۱۹۷۱</p>
-                <a href="#"></a>
-            </div>
+            @if(count($videos) == 0)
+                <div class="col">
+                    <div class="alert alert-dark" role="alert">ویدئویی در این بخش بارگذاری نشده است.</div>
+                </div>
+            @else
+                @foreach($videos as $video)
+                    <div class="video col-sm-6 col-md-4 col-lg-3">
+                        <img src="{{ $video->thumbnail  }}" alt="{{ $video->title }}" class="img-fluid">
+                        <p>{{ $video->title }}</p>
+                        <p>دسته: {{ $video->displayCategory() }}</p>
+                        <a href="{{ route('videos.show') }} "></a>
+                    </div>
+                @endforeach
+            @endif
         </div>
         <div class="row">
-            <nav class="col text-center pt-2">
-                <ul class="pagination">
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            <nav class="col text-center pt-2">{{ $videos->render() }}</nav>
         </div>
     </div>
 @endsection

@@ -44,6 +44,13 @@ use Illuminate\Support\Carbon;
  */
 class Video extends Model
 {
+    public function displayCategory()
+    {
+        return $this->categories()->count() ?
+            $this->categories()->first()->title :
+            trans('categories.uncategorized');
+    }
+
     /**
      * @return BelongsTo
      */

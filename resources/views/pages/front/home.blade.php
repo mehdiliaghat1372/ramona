@@ -13,62 +13,30 @@
             <div class="row">
                 <div class="col title"><h2>{{ $category->title }}</h2></div>
             </div>
-            <div class="row">
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
+            @if($category->videos()->count() == 0)
+                <div class="row">
+                    <div class="col">
+                        <div class="alert alert-dark" role="alert">ویدئویی در این بخش بارگذاری نشده است.</div>
+                    </div>
                 </div>
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
+            @else
+                <div class="row">
+                    @foreach($category->videos()->orderByDesc('id')->limit(8)->get() as $video)
+                        <div class="video col-sm-6 col-md-4 col-lg-3">
+                            <img src="{{ $video->thumbnail  }}" alt="{{ $video->title }}" class="img-fluid">
+                            <p>{{ $video->title }}</p>
+                            <p>دسته: {{ $video->displayCategory() }}</p>
+                            <a href="{{ route('videos.show') }} "></a>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
+                <div class="row">
+                    <div class="col text-center pt-2">
+                        <a href="{{ route('categories.show', ['category' => $category, 'title' => $category->title]) }}"
+                           class="read-more">نمایش همه ویدئو‌های دسته {{ $category->title }}</a>
+                    </div>
                 </div>
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
-                </div>
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m3.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
-                </div>
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m1.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
-                </div>
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m4.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
-                </div>
-                <div class="video col-sm-6 col-md-4 col-lg-3">
-                    <img src="{{ asset('demo/m2.jpg') }}" class="img-fluid">
-                    <p>فیلم پدرخوانده</p>
-                    <p>درام مافیایی - سال ۱۹۷۱</p>
-                    <a href="{{ route('videos.show') }} "></a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col text-center pt-2">
-                    <a href="{{ route('categories.show', $category) }}"
-                       class="read-more">نمایش همه {{ $category->title }} ها</a>
-                </div>
-            </div>
+            @endif
         </div>
     @endforeach
 @endsection
