@@ -7,6 +7,7 @@
     @show
     @section('head-links')
         <link rel="stylesheet" href="{{ asset('vendor/bootstrap-4.4.1/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('vendor/fontawesome-5.12.0/css/all.min.css') }}">
         <link rel="stylesheet" href="{{ asset('css/general.css?v1') }}">
         <link rel="icon" href="{{ asset('favicon.ico') }}">
         <link rel="apple-touch-icon" href="{{ asset('favicon.ico') }}">
@@ -23,7 +24,7 @@
     <script src="{{ asset('vendor/jquery-3.4.1.min.js') }}"></script>
     <script src="{{ asset('vendor/popper.min.js') }}"></script>
     <script src="{{ asset('vendor/bootstrap-4.4.1/js/bootstrap.min.js') }}"></script>
-    <script src="https://kit.fontawesome.com/a2d6e8a0a4.js" crossorigin="anonymous"></script>
+    <script src="{{ asset('vendor/fontawesome-5.12.0/js/all.min.js') }}"></script>
 @show
 
 </body>
