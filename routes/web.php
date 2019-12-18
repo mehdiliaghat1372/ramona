@@ -19,7 +19,7 @@ Route::get('/categories/{category}', [
     'uses' => 'Front\CategoriesController@show',
     'as' => 'categories.show',
 ]);
-Route::get('/videos', [
+Route::get('/videos/{video}', [
     'uses' => 'Front\VideosController@show',
     'as' => 'videos.show',
 ]);

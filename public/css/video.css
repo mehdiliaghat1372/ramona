@@ -13,3 +13,10 @@ video {
     width: 100%;
     height: auto;
 }
+
+h2 {
+    color: rgb(135, 47, 132);
+    padding-bottom: 10px;
+    border-bottom: solid 1px rgb(135, 47, 132);
+    font-size: large;
+}

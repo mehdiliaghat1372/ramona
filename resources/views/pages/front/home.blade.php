@@ -26,7 +26,7 @@
                             <img src="{{ $video->thumbnail  }}" alt="{{ $video->title }}" class="img-fluid">
                             <p>{{ $video->title }}</p>
                             <p>دسته: {{ $video->displayCategory() }}</p>
-                            <a href="{{ route('videos.show') }} "></a>
+                            <a href="{{ route('videos.show', $video) }} "></a>
                         </div>
                     @endforeach
                 </div>
