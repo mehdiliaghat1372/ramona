@@ -27,6 +27,7 @@ class RouteServiceProvider extends ServiceProvider
 
         Route::pattern('user', $numeric);
         Route::pattern('category', $numeric);
+        Route::pattern('video', $numeric);
 
         parent::boot();
     }

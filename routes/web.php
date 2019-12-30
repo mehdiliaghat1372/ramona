@@ -23,6 +23,10 @@ Route::get('/videos/{video}', [
     'uses' => 'Front\VideosController@show',
     'as' => 'videos.show',
 ]);
+Route::post('/videos/{video}/react', [
+    'uses' => 'Front\VideosController@react',
+    'as' => 'videos.react',
+]);
 
 Route::get('/auth/sign-in', [
     'uses' => 'Auth\SignInController@show',

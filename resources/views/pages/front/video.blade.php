@@ -29,13 +29,15 @@
         <div class="row mt-2">
             <div class="col-md-3 text-center overflow-auto">
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                        <input type="radio" name="options" id="option1" checked>
-                        <span><i class="fas fa-thumbs-up"></i> 45</span>
+                    <label class="btn btn-secondary">
+                        <input type="radio" id="like" checked>
+                        <i class="fas fa-thumbs-up"></i>
+                        <span id="likes">0</span>
                     </label>
                     <label class="btn btn-secondary">
-                        <input type="radio" name="options" id="option3">
-                        <span><i class="fas fa-thumbs-down"></i> 234</span>
+                        <input type="radio" id="dislike">
+                        <i class="fas fa-thumbs-down"></i>
+                        <span id="dislikes">0</span>
                     </label>
                 </div>
             </div>
@@ -87,7 +89,26 @@
 
 @section('scripts')
     @parent
-    <script defer>
+    <script>
+        $('#like, #dislike').click(function () {
+            let type = $(this).attr('id') === 'like' ? 1 : 2;
 
+            $.ajax({
+                method: 'post',
+                url: '{{ route('videos.react', $video) }}',
+                data: JSON.stringify({
+                    type: type,
+                }),
+                contentType: 'application/json',
+                dataType: 'json',
+            }).done(function (response) {
+                $('#likes').html(response['likes']);
+                $('#dislikes').html(response['dislikes']);
+                $('#like, #dislike').removeClass('active');
+                response['reaction'] === 1 ? $('#like').addClass('active') : $('#dislike').addClass('active');
+            }).fail(function (response) {
+                console.log(response);
+            });
+        });
     </script>
 @endsection
