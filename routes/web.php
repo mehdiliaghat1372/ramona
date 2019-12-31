@@ -23,9 +23,13 @@ Route::get('/videos/{video}', [
     'uses' => 'Front\VideosController@show',
     'as' => 'videos.show',
 ]);
-Route::post('/videos/{video}/react', [
+Route::post('/videos/{video}/reactions', [
     'uses' => 'Front\VideosController@react',
-    'as' => 'videos.react',
+    'as' => 'videos.reactions',
+]);
+Route::post('/videos/{video}/comments', [
+    'uses' => 'Front\VideosController@comment',
+    'as' => 'videos.comments',
 ]);
 
 Route::get('/auth/sign-in', [
@@ -51,6 +55,11 @@ Route::group(['middleware' => 'auth'], function () {
             'users' => 'UsersController',
             'categories' => 'CategoriesController',
             'videos' => 'VideosController',
+            'comments' => 'CommentsController',
+        ]);
+        Route::patch('/comments/{comment}/accept', [
+            'uses' => 'DashboardController@accept',
+            'as' => 'comments.accept',
         ]);
     });
 });

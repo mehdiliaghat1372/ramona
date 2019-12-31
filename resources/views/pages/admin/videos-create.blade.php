@@ -25,13 +25,13 @@
                 <div class="col col-md-6">
                     <div class="form-group">
                         <select name="category" class="form-control" title="دسته">
-                            <option value="" selected>دسته</option>
                             @foreach($categories as $category)
                                 <option value="{{ $category->id }}"
                                     {{ old('category') == $category->id ? 'selected' : '' }}>
                                     {{ $category->title }}
                                 </option>
                             @endforeach
+                            <option value="" selected>دسته</option>
                         </select>
                     </div>
                 </div>

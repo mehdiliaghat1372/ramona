@@ -12,6 +12,7 @@ h1 {
 video {
     width: 100%;
     height: auto;
+    background: black;
 }
 
 h2 {

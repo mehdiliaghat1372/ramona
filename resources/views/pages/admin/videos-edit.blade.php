@@ -28,16 +28,16 @@
                     <div class="form-group">
                         <label>دسته:</label>
                         <select name="category" class="form-control" title="دسته">
-                            <option value="" selected>بدون دسته</option>
                             @foreach($categories as $category)
                                 <option
                                     @if(count($video->categories) && $video->categories[0]->id == $category->id)
-                                    {{ 'checked' }}
+                                    {{ 'selected' }}
                                     @endif
                                     value="{{ $category->id }}">
                                     {{ $category->title }}
                                 </option>
                             @endforeach
+                            <option value="" selected>بدون دسته</option>
                         </select>
                     </div>
                 </div>

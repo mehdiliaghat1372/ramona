@@ -28,18 +28,14 @@
         </div>
         <div class="row mt-2">
             <div class="col-md-3 text-center overflow-auto">
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary">
-                        <input type="radio" id="like" checked>
-                        <i class="fas fa-thumbs-up"></i>
-                        <span id="likes">0</span>
-                    </label>
-                    <label class="btn btn-secondary">
-                        <input type="radio" id="dislike">
-                        <i class="fas fa-thumbs-down"></i>
-                        <span id="dislikes">0</span>
-                    </label>
-                </div>
+                <label class="btn {{ $reaction == 1 ? 'btn-success' : 'btn-secondary' }}" id="like">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span id="likes">{{ $likes }}</span>
+                </label>
+                <label class="btn {{ $reaction == 2 ? 'btn-danger' : 'btn-secondary' }}" id="dislike">
+                    <i class="fas fa-thumbs-down"></i>
+                    <span id="dislikes">{{ $dislikes }}</span>
+                </label>
             </div>
             <div class="col-md-9">
                 <div class="bg-light p-2 rounded">{{ $video->content }}</div>
@@ -52,28 +48,50 @@
         </div>
         <div class="row mt-2">
             <div class="col-sm-6 col-md-8 mb-4">
-                <div class="comment">
-                    <strong>میلاد رحیمی</strong>
-                    <p>به به چه فیلم کسشری</p>
-                    <small>11:45 @ 2/4/1395</small>
-                </div>
-                <div class="comment">
-                    <strong>میلاد رحیمی</strong>
-                    <p>به به چه فیلم کسشری</p>
-                    <small>11:45 @ 2/4/1395</small>
-                </div>
+                @if(count($comments))
+                    @foreach($comments as $comment)
+                        <div class="comment">
+                            <strong>{{ $comment->name }}</strong>
+                            <p>{{ $comment->content }}</p>
+                            <small>{{ jDate($comment->created_at) }}</small>
+                        </div>
+                    @endforeach
+                @else
+                    <div class="alert alert-secondary rtl">هیچ دیدگاهی برای این ویدئو فرستاده نشده است.</div>
+                @endif
             </div>
             <div class="col-sm-6 col-md-4">
-                <form method="post" class="rtl text-right">
-                    <div class="alert alert-danger">ریدی</div>
+                <form method="post" action="{{ route('videos.comments', $video->id) }}" class="rtl text-right">
+                    @csrf
+                    @if($errors->any())
+                        <div class="alert alert-danger rtl">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @if(session('error'))
+                        <div class="alert alert-danger rtl">{{ session('error') }}</div>
+                    @endif
+
+                    @if(session('success'))
+                        <div class="alert alert-success rtl">{{ session('success') }}</div>
+                    @endif
+
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" title="نام" placeholder="نام" required>
+                        <input type="text" class="form-control" name="name" value="{{ old('name') }}" title="نام"
+                               placeholder="نام" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control ltr" name="email" title="ایمیل" placeholder="ایمیل">
+                        <input type="email" class="form-control ltr" name="email" value="{{ old('email') }}"
+                               title="ایمیل" placeholder="ایمیل">
                     </div>
                     <div class="form-group">
-                        <textarea name="message" class="form-control" title="پیام" placeholder="پیام"></textarea>
+                        <textarea name="content" class="form-control" title="پیام"
+                                  placeholder="پیام">{{ old('content') }}</textarea>
                     </div>
                     <div class="form-group">
                         @csrf
@@ -92,10 +110,12 @@
     <script>
         $('#like, #dislike').click(function () {
             let type = $(this).attr('id') === 'like' ? 1 : 2;
+            let likeBtn = $('#like');
+            let dislikeBtn = $('#dislike');
 
             $.ajax({
                 method: 'post',
-                url: '{{ route('videos.react', $video) }}',
+                url: '{{ route('videos.reactions', $video) }}',
                 data: JSON.stringify({
                     type: type,
                 }),
@@ -104,8 +124,10 @@
             }).done(function (response) {
                 $('#likes').html(response['likes']);
                 $('#dislikes').html(response['dislikes']);
-                $('#like, #dislike').removeClass('active');
-                response['reaction'] === 1 ? $('#like').addClass('active') : $('#dislike').addClass('active');
+                likeBtn.removeClass('btn-success');
+                dislikeBtn.removeClass('btn-danger');
+                $('#like, #dislike').addClass('btn-secondary');
+                response['reaction'] === 1 ? likeBtn.addClass('btn-success') : dislikeBtn.addClass('btn-danger');
             }).fail(function (response) {
                 console.log(response);
             });

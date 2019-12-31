@@ -3,7 +3,7 @@
 @section('head-links')
     @parent
     <link rel="stylesheet" href="{{ asset('css/admin-general.css?v4') }}">
-@show
+@endsection
 
 @section('content')
     <div class="container-fluid mt-3">
@@ -54,6 +54,10 @@
                     <a class="list-group-item list-group-item-action" href="{{ route('admin.videos.index') }}">
                         <span>ویدئو‌ها</span>
                         <i class="fas fa-photo-video"></i>
+                    </a>
+                    <a class="list-group-item list-group-item-action" href="{{ route('admin.comments.index') }}">
+                        <span>دیدگاه‌ها</span>
+                        <i class="fas fa-comment"></i>
                     </a>
                     <a class="list-group-item list-group-item-action" href="{{ route('auth.sign-out') }}">
                         <span>برون‌رفت</span>

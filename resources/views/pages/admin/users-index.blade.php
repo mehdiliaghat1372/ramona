@@ -61,6 +61,7 @@
                     </tbody>
                 </table>
             </div>
+            <div class="rtl">{{ $users->render() }}</div>
         </div>
     </div>
 @endsection

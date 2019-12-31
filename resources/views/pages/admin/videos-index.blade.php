@@ -57,6 +57,7 @@
                     </tbody>
                 </table>
             </div>
+            <div class="rtl">{{ $videos->render() }}</div>
         </div>
     </div>
 @endsection

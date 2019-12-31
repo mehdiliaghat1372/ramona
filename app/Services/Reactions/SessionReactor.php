@@ -23,7 +23,12 @@ class SessionReactor implements Reactor
      */
     public function set(int $videoId, int $type, int $userId): void
     {
-        $reaction = new Reaction();
+        $id = session($this->key($videoId));
+
+        if (empty($reaction = Reaction::find($id))) {
+            $reaction = new Reaction();
+        }
+
         $reaction->user_id = $userId;
         $reaction->type = $type;
         $reaction->video_id = $videoId;
@@ -32,6 +37,7 @@ class SessionReactor implements Reactor
             'agent' => request()->userAgent(),
             'ip' => request()->ip(),
         ]);
+        $reaction->save();
 
         session()->put($this->key($videoId), $reaction->id);
     }
@@ -44,7 +50,7 @@ class SessionReactor implements Reactor
      */
     private function key(int $videoId): string
     {
-        return 'reaction-' . $videoId;
+        return join(':', ['reaction', $videoId]);
     }
 
     /**
