@@ -46,7 +46,6 @@ $factory->define(Category::class, function (Faker $faker) {
 
 $factory->define(Video::class, function (Faker $faker) {
     return [
-        'author_id' => factory(User::class)->create()->id,
         'title' => $faker->unique()->name,
         'content' => $faker->text,
         'url' => $faker->url,
