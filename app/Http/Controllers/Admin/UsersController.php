@@ -18,14 +18,14 @@ class UsersController extends Controller
     {
         $users = User::orderBy('last_name')->paginate(10);
 
-        return view('pages.admin.users-index', [
+        return view('pages.admin.users.index', [
             'users' => $users,
         ]);
     }
 
     public function create()
     {
-        return view('pages.admin.users-create', [
+        return view('pages.admin.users.create', [
             'roles' => Role::all(),
         ]);
     }
@@ -62,7 +62,7 @@ class UsersController extends Controller
 
     public function edit(User $user)
     {
-        return view('pages.admin.users-edit', [
+        return view('pages.admin.users.edit', [
             'user' => $user,
             'roles' => Role::all(),
         ]);

@@ -158,6 +158,10 @@ return [
         'title' => 'عنوان',
         'content' => 'محتوا',
         'type' => 'نوع',
+        'button' => 'دکمه',
+        'image' => 'تصویر',
+        'link' => 'لینک',
+        'description' => 'توصیحات',
     ],
 
 ];

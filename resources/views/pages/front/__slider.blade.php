@@ -1,25 +1,13 @@
 <div class="slider-container">
     <div class="slider">
-        <div class="slide" style="background-image: url({{ asset('demo/slide1.jpg') }})">
-            <div class="content">
-                <h3>فیلم پدرخوانده</h3>
-                <p>بهترین فیلم تمام دوران ها</p>
-                <a href="#" class="btn">تماشا</a>
+        @foreach($slides as $slide)
+            <div class="slide" style="background-image: url({{ $slide->image }})">
+                <div class="content">
+                    <h3>{{ $slide->title }}</h3>
+                    <p>{{ $slide->description }}</p>
+                    <a href="{{ $slide->link }}" class="btn">{{ $slide->button }}</a>
+                </div>
             </div>
-        </div>
-        <div class="slide" style="background-image: url({{ asset('demo/slide2.jpg') }})">
-            <div class="content">
-                <h3>فیلم پدرخوانده</h3>
-                <p>بهترین فیلم تمام دوران ها</p>
-                <a href="#" class="btn">تماشا</a>
-            </div>
-        </div>
-        <div class="slide" style="background-image: url({{ asset('demo/slide3.jpg') }})">
-            <div class="content">
-                <h3>فیلم پدرخوانده</h3>
-                <p>بهترین فیلم تمام دوران ها</p>
-                <a href="#" class="btn">تماشا</a>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>

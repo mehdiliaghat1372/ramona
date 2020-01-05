@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Front;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Comment;
+use App\Models\Slide;
 use App\Models\Video;
 use App\Services\Reactions\Enums\ReactionTypes;
 use App\Services\Reactions\Reactor;
@@ -30,6 +31,7 @@ class VideosController extends Controller
 
         return view('pages.front.video', [
             'categories' => Category::all(),
+            'slides' => Slide::all(),
             'video' => $video,
             'likes' => $likes,
             'dislikes' => $dislikes,

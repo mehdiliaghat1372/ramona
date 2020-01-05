@@ -37,7 +37,7 @@ class CommentsController extends Controller
 
         $menu = $isAccepted === '0' ? 'acceptable' : 'all';
 
-        return view('pages.admin.comments-index', [
+        return view('pages.admin.comments.index', [
             'comments' => $comments,
             'menu' => $menu,
         ]);

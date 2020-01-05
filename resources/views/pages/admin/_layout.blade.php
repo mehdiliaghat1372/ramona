@@ -43,14 +43,6 @@
                         <span>داشبورد</span>
                         <i class="fas fa-tachometer-alt"></i>
                     </a>
-                    <a class="list-group-item list-group-item-action" href="{{ route('admin.users.index') }}">
-                        <span>کاربران</span>
-                        <i class="fas fa-users"></i>
-                    </a>
-                    <a class="list-group-item list-group-item-action" href="{{ route('admin.categories.index') }}">
-                        <span>دسته‌بندی‌</span>
-                        <i class="fas fa-sitemap"></i>
-                    </a>
                     <a class="list-group-item list-group-item-action" href="{{ route('admin.videos.index') }}">
                         <span>ویدئو‌ها</span>
                         <i class="fas fa-photo-video"></i>
@@ -58,6 +50,18 @@
                     <a class="list-group-item list-group-item-action" href="{{ route('admin.comments.index') }}">
                         <span>دیدگاه‌ها</span>
                         <i class="fas fa-comment"></i>
+                    </a>
+                    <a class="list-group-item list-group-item-action" href="{{ route('admin.categories.index') }}">
+                        <span>دسته‌بندی‌</span>
+                        <i class="fas fa-sitemap"></i>
+                    </a>
+                    <a class="list-group-item list-group-item-action" href="{{ route('admin.slides.index') }}">
+                        <span>اسلاید‌ها</span>
+                        <i class="fas fa-pager"></i>
+                    </a>
+                    <a class="list-group-item list-group-item-action" href="{{ route('admin.users.index') }}">
+                        <span>کاربران</span>
+                        <i class="fas fa-users"></i>
                     </a>
                     <a class="list-group-item list-group-item-action" href="{{ route('auth.sign-out') }}">
                         <span>برون‌رفت</span>

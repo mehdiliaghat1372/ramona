@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Role;
+use App\Models\Slide;
 use App\Models\User;
 use App\Models\Video;
 use Faker\Generator as Faker;
@@ -32,24 +33,33 @@ $factory->define(User::class, function (Faker $faker) {
 
 $factory->define(Role::class, function (Faker $faker) {
     return [
-        'title' => $faker->unique()->title,
+        'title' => $faker->unique()->name,
     ];
 });
 
 $factory->define(Category::class, function (Faker $faker) {
     return [
         'parent_id' => 0,
-        'title' => $faker->unique()->title,
+        'title' => $faker->unique()->name,
     ];
 });
 
 $factory->define(Video::class, function (Faker $faker) {
     return [
         'author_id' => factory(User::class)->create()->id,
-        'title' => $faker->unique()->title,
+        'title' => $faker->unique()->name,
         'content' => $faker->text,
         'url' => $faker->url,
-        'thumbnail' => $faker->imageUrl(),
+        'thumbnail' => $faker->imageUrl(1000, 570),
     ];
 });
 
+$factory->define(Slide::class, function (Faker $faker) {
+    return [
+        'image' => $faker->imageUrl(1920, 820),
+        'link' => $faker->url,
+        'title' => $faker->name,
+        'description' => $faker->text,
+        'button' => trans('words.watch'),
+    ];
+});

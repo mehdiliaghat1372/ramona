@@ -15,14 +15,14 @@ class VideosController extends Controller
 {
     public function index()
     {
-        return view('pages.admin.videos-index', [
+        return view('pages.admin.videos.index', [
             'videos' => Video::orderByDesc('id')->paginate(10),
         ]);
     }
 
     public function create()
     {
-        return view('pages.admin.videos-create', [
+        return view('pages.admin.videos.create', [
             'categories' => Category::all(),
         ]);
     }
@@ -59,7 +59,7 @@ class VideosController extends Controller
 
     public function edit(Video $video)
     {
-        return view('pages.admin.videos-edit', [
+        return view('pages.admin.videos.edit', [
             'video' => $video,
             'categories' => Category::all(),
         ]);

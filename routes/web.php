@@ -47,16 +47,20 @@ Route::get('/auth/sign-out', [
 Route::group(['middleware' => 'auth'], function () {
     // Admin
     Route::group(['prefix' => '/admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
+        // Dashboard
         Route::get('/', [
             'uses' => 'DashboardController@show',
             'as' => 'dashboard',
         ]);
+        // Admin Panels
         Route::resources([
             'users' => 'UsersController',
             'categories' => 'CategoriesController',
             'videos' => 'VideosController',
             'comments' => 'CommentsController',
+            'slides' => 'SlidesController',
         ]);
+        // Extended routes
         Route::patch('/comments/{comment}/accept', [
             'uses' => 'DashboardController@accept',
             'as' => 'comments.accept',

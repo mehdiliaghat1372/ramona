@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Slide;
 use App\Models\Video;
 
 class CategoriesController extends Controller
@@ -22,6 +23,7 @@ class CategoriesController extends Controller
 
         return view('pages.front.category', [
             'categories' => Category::all(),
+            'slides' => Slide::all(),
             'videos' => $videos,
             'title' => $title,
         ]);

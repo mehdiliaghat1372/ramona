@@ -16,14 +16,14 @@ class CategoriesController extends Controller
     {
         $categories = Category::orderBy('title')->paginate(10);
 
-        return view('pages.admin.categories-index', [
+        return view('pages.admin.categories.index', [
             'categories' => $categories,
         ]);
     }
 
     public function create()
     {
-        return view('pages.admin.categories-create');
+        return view('pages.admin.categories.create');
     }
 
     /**
@@ -49,7 +49,7 @@ class CategoriesController extends Controller
 
     public function edit(Category $category)
     {
-        return view('pages.admin.categories-edit', [
+        return view('pages.admin.categories.edit', [
             'category' => $category,
         ]);
     }
