@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('vendor/slick-1.8.1/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('css/slider.css?v7') }}">
-@show
+@endsection
 
 @section('content')
     @include('pages.front.__header')
@@ -19,4 +19,4 @@
     @parent
     <script src="{{ asset('vendor/slick-1.8.1/slick.min.js') }}"></script>
     <script src="{{ asset('js/slider.js?v2') }}"></script>
-@show
+@endsection

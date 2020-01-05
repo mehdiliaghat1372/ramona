@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Category;
+use App\Models\Role;
 use App\Models\User;
+use App\Models\Video;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
-use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,27 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
     ];
 });
+
+$factory->define(Role::class, function (Faker $faker) {
+    return [
+        'title' => $faker->unique()->title,
+    ];
+});
+
+$factory->define(Category::class, function (Faker $faker) {
+    return [
+        'parent_id' => 0,
+        'title' => $faker->unique()->title,
+    ];
+});
+
+$factory->define(Video::class, function (Faker $faker) {
+    return [
+        'author_id' => factory(User::class)->create()->id,
+        'title' => $faker->unique()->title,
+        'content' => $faker->text,
+        'url' => $faker->url,
+        'thumbnail' => $faker->imageUrl(),
+    ];
+});
+
