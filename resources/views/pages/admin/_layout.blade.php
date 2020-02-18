@@ -3,7 +3,6 @@
 @section('head-links')
     @parent
     <link rel="stylesheet" href="{{ asset('css/admin-general.css?v4') }}">
-
 @endsection
 
 @section('content')

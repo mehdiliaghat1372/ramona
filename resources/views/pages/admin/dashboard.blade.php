@@ -177,7 +177,6 @@
     <div class="row">
         <div class="col-md-12">
             <!-- BAR CHART -->
-
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">ویدئوهای پخش شده</h3>
@@ -227,14 +226,12 @@
             <!-- DONUT CHART -->
 
             <!-- /.box -->
-
         </div>
         <div class="col-md-6">
             <!-- LINE CHART -->
             <div class="box box-info">
                 <div class="box-header with-border">
                     <h3 class="box-title">خطی</h3>
-
                     <div class="box-tools pull-right">
                         <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
                                 class="fa fa-minus"></i>
@@ -252,10 +249,7 @@
             </div>
             <!-- /.box -->
         </div>
-
-
     </div>
-
 @endsection
 
 @section('scripts')
@@ -449,8 +443,6 @@
             barChart.Bar(barChartData, barChartOptions)
         })
     </script>
-
-
 
     <script>
         $(function () {
