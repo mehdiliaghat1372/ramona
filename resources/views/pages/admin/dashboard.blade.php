@@ -1,4 +1,24 @@
 @extends('pages.admin._layout')
+@section('head-links')
+    @parent
+    <link rel="stylesheet" href="{{ asset('admin_assets/dist/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_assets/dist/css/AdminLTE.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_assets/dist/css/fontiran.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin_assets/dist/css/skins/skin-red-light.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('admin_assets/dist/css/mine.css') }}">
+    <style>
+        .box.box-danger {
+            border-top-color: #007bff;
+            border-bottom-color: #007bff;
+        }
+
+        .box.box-success {
+            border-bottom-color: #007bff;
+            border-top-color: #007bff;
+        }
+    </style>
+@endsection
 
 @section('title', 'داشبورد')
 
@@ -71,7 +91,7 @@
     </div>
 
     <div class="card mt-3">
-        <div class="card-header">داده های آماری </div>
+        <div class="card-header">داده های آماری</div>
     </div>
     <br><br>
     <div class="row">
@@ -81,9 +101,11 @@
                     <h3 class="box-title">نمودار درخواست پخش</h3>
 
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="box-body chart-responsive">
@@ -99,9 +121,11 @@
                     <h3 class="box-title">نمودار کاربران</h3>
 
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="box-body chart-responsive">
@@ -127,9 +151,11 @@
                     <h3 class="box-title">کاربران فعال هفته</h3>
 
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="box-body">
@@ -157,9 +183,11 @@
                     <h3 class="box-title">ویدئوهای پخش شده</h3>
 
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="box-body">
@@ -180,9 +208,11 @@
                     <h3 class="box-title">ستونی</h3>
 
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="box-body">
@@ -206,9 +236,11 @@
                     <h3 class="box-title">خطی</h3>
 
                     <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
                         </button>
-                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="box-body">
@@ -227,7 +259,29 @@
 @endsection
 
 @section('scripts')
+    <script src="{{ asset('admin_assets/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('admin_assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/app.min.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/pages/Chart.Bar.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/pages/Chart.Core.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/pages/Chart.Doughnut.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/pages/Chart.Line.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/pages/Chart.PolarArea.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/Chart.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/Chart.min.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/raphael.min.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/raphael.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/morris.min.js') }}"></script>
+
+    <script src="{{ asset('admin_assets/dist/js/pages/jquery.flot.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/pages/Chart.Radar.js') }}"></script>
+    <script src="{{ asset('admin_assets/dist/js/polyfill.min.js') }}"></script>
+    <script type='application/javascript' src="{{ asset('admin_assets/dist/js/fast_click.js') }}"></script>
+    <script src="{{ asset('auth_assets/vendor/select2/select2.min.js') }}"></script>
+
+    <script src="{{ asset('admin_assets/dist/js/mine.js') }}"></script>
     @parent
+
     <script>
         $(function () {
             "use strict";
@@ -238,18 +292,18 @@
                 resize: true,
                 colors: ["#3c8dbc", "#f56954", "#00a65a"],
                 data: [
-                    { label: " درخواست موفق", value:  30},
-                    {label: "درخواست ناموقث", value: 5 },
+                    {label: " درخواست موفق", value: 30},
+                    {label: "درخواست ناموقث", value: 5},
                 ],
                 hideHover: 'auto'
             });
             var donut = new Morris.Donut({
                 element: 'investable-chart',
                 resize: true,
-                colors: [ "#f56954", "#007bff"],
+                colors: ["#f56954", "#007bff"],
                 data: [
-                    {label: "کاربران عادی", value: 52 },
-                    {label: "کاربران فعال", value:  15},
+                    {label: "کاربران عادی", value: 52},
+                    {label: "کاربران فعال", value: 15},
                 ],
 
 
@@ -275,70 +329,70 @@
             var areaChartCanvas = $('#userAreaChart').get(0).getContext('2d')
             // This will get the first returned node in the jQuery collection.
 
-            var areaChart       = new Chart(areaChartCanvas)
+            var areaChart = new Chart(areaChartCanvas)
             var areaChartData = {
-                labels  : ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
+                labels: ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'آبان', 'آذر', 'دی', 'بهمن', 'اسفند'],
                 datasets: [
                     {
-                        label               : 'Electronics',
-                        fillColor           : 'rgba(210, 214, 222, 1)',
-                        strokeColor         : 'rgba(210, 214, 222, 1)',
-                        pointColor          : 'rgba(210, 214, 222, 1)',
-                        pointStrokeColor    : '#c1c7d1',
-                        pointHighlightFill  : '#fff',
+                        label: 'Electronics',
+                        fillColor: 'rgba(210, 214, 222, 1)',
+                        strokeColor: 'rgba(210, 214, 222, 1)',
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data                : [20, 40, 10, 6, 24, 7, 3 ,20, 40, 10, 6, 24]
+                        data: [20, 40, 10, 6, 24, 7, 3, 20, 40, 10, 6, 24]
                     },
                     {
-                        label               : 'Digital Goods',
-                        fillColor           : 'rgba(60,141,188,0.9)',
-                        strokeColor         : 'rgba(60,141,188,0.8)',
-                        pointColor          : '#3b8bba',
-                        pointStrokeColor    : 'rgba(60,141,188,1)',
-                        pointHighlightFill  : '#fff',
+                        label: 'Digital Goods',
+                        fillColor: 'rgba(60,141,188,0.9)',
+                        strokeColor: 'rgba(60,141,188,0.8)',
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data                : [20, 40, 10, 6, 24, 7, 3 ,20, 40, 10, 6, 24]
+                        data: [20, 40, 10, 6, 24, 7, 3, 20, 40, 10, 6, 24]
                     }
                 ]
             }
 
             var areaChartOptions = {
                 //Boolean - If we should show the scale at all
-                showScale               : true,
+                showScale: true,
                 //Boolean - Whether grid lines are shown across the chart
-                scaleShowGridLines      : false,
+                scaleShowGridLines: false,
                 //String - Colour of the grid lines
-                scaleGridLineColor      : 'rgba(0,0,0,.05)',
+                scaleGridLineColor: 'rgba(0,0,0,.05)',
                 //Number - Width of the grid lines
-                scaleGridLineWidth      : 1,
+                scaleGridLineWidth: 1,
                 //Boolean - Whether to show horizontal lines (except X axis)
                 scaleShowHorizontalLines: true,
                 //Boolean - Whether to show vertical lines (except Y axis)
-                scaleShowVerticalLines  : true,
+                scaleShowVerticalLines: true,
                 //Boolean - Whether the line is curved between points
-                bezierCurve             : true,
+                bezierCurve: true,
                 //Number - Tension of the bezier curve between points
-                bezierCurveTension      : 0.3,
+                bezierCurveTension: 0.3,
                 //Boolean - Whether to show a dot for each point
-                pointDot                : false,
+                pointDot: false,
                 //Number - Radius of each point dot in pixels
-                pointDotRadius          : 4,
+                pointDotRadius: 4,
                 //Number - Pixel width of point dot stroke
-                pointDotStrokeWidth     : 1,
+                pointDotStrokeWidth: 1,
                 //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-                pointHitDetectionRadius : 20,
+                pointHitDetectionRadius: 20,
                 //Boolean - Whether to show a stroke for datasets
-                datasetStroke           : true,
+                datasetStroke: true,
                 //Number - Pixel width of dataset stroke
-                datasetStrokeWidth      : 2,
+                datasetStrokeWidth: 2,
                 //Boolean - Whether to fill the dataset with a color
-                datasetFill             : true,
+                datasetFill: true,
                 //String - A legend template
-                legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+                legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
                 //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-                maintainAspectRatio     : true,
+                maintainAspectRatio: true,
                 //Boolean - whether to make the chart responsive to window resizing
-                responsive              : true
+                responsive: true
             }
 
             //Create the line chart
@@ -347,49 +401,48 @@
             //-------------
             //- LINE CHART -
             //--------------
-            var lineChartCanvas          = $('#userLineChart').get(0).getContext('2d')
-            var lineChart                = new Chart(lineChartCanvas)
-            var lineChartOptions         = areaChartOptions
+            var lineChartCanvas = $('#userLineChart').get(0).getContext('2d')
+            var lineChart = new Chart(lineChartCanvas)
+            var lineChartOptions = areaChartOptions
             lineChartOptions.datasetFill = false
             lineChart.Line(areaChartData, lineChartOptions)
-
 
 
             //-------------
             //- BAR CHART -
             //-------------
-            var barChartCanvas                   = $('#userBarChart').get(0).getContext('2d')
-            var barChart                         = new Chart(barChartCanvas)
-            var barChartData                     = areaChartData
-            barChartData.datasets[1].fillColor   = '#00a65a'
+            var barChartCanvas = $('#userBarChart').get(0).getContext('2d')
+            var barChart = new Chart(barChartCanvas)
+            var barChartData = areaChartData
+            barChartData.datasets[1].fillColor = '#00a65a'
             barChartData.datasets[1].strokeColor = '#00a65a'
-            barChartData.datasets[1].pointColor  = '#00a65a'
-            var barChartOptions                  = {
+            barChartData.datasets[1].pointColor = '#00a65a'
+            var barChartOptions = {
                 //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-                scaleBeginAtZero        : true,
+                scaleBeginAtZero: true,
                 //Boolean - Whether grid lines are shown across the chart
-                scaleShowGridLines      : true,
+                scaleShowGridLines: true,
                 //String - Colour of the grid lines
-                scaleGridLineColor      : 'rgba(0,0,0,.05)',
+                scaleGridLineColor: 'rgba(0,0,0,.05)',
                 //Number - Width of the grid lines
-                scaleGridLineWidth      : 1,
+                scaleGridLineWidth: 1,
                 //Boolean - Whether to show horizontal lines (except X axis)
                 scaleShowHorizontalLines: true,
                 //Boolean - Whether to show vertical lines (except Y axis)
-                scaleShowVerticalLines  : true,
+                scaleShowVerticalLines: true,
                 //Boolean - If there is a stroke on each bar
-                barShowStroke           : true,
+                barShowStroke: true,
                 //Number - Pixel width of the bar stroke
-                barStrokeWidth          : 2,
+                barStrokeWidth: 2,
                 //Number - Spacing between each of the X value sets
-                barValueSpacing         : 5,
+                barValueSpacing: 5,
                 //Number - Spacing between data sets within X values
-                barDatasetSpacing       : 1,
+                barDatasetSpacing: 1,
                 //String - A legend template
-                legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+                legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
                 //Boolean - whether to make the chart responsive
-                responsive              : true,
-                maintainAspectRatio     : true
+                responsive: true,
+                maintainAspectRatio: true
             }
 
             barChartOptions.datasetFill = false
@@ -414,70 +467,70 @@
             var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
             // This will get the first returned node in the jQuery collection.
 
-            var areaChart       = new Chart(areaChartCanvas)
+            var areaChart = new Chart(areaChartCanvas)
             var areaChartData = {
-                labels  : ['شنبه', 'یکشنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنج شنبه', 'جمعه'],
+                labels: ['شنبه', 'یکشنبه', 'دوشنبه', 'سه شنبه', 'چهارشنبه', 'پنج شنبه', 'جمعه'],
                 datasets: [
                     {
-                        label               : 'Electronics',
-                        fillColor           : 'rgba(210, 214, 222, 1)',
-                        strokeColor         : 'rgba(210, 214, 222, 1)',
-                        pointColor          : 'rgba(210, 214, 222, 1)',
-                        pointStrokeColor    : '#c1c7d1',
-                        pointHighlightFill  : '#fff',
+                        label: 'Electronics',
+                        fillColor: 'rgba(210, 214, 222, 1)',
+                        strokeColor: 'rgba(210, 214, 222, 1)',
+                        pointColor: 'rgba(210, 214, 222, 1)',
+                        pointStrokeColor: '#c1c7d1',
+                        pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(220,220,220,1)',
-                        data                : [20, 40, 10, 6, 24, 7, 3]
+                        data: [20, 40, 10, 6, 24, 7, 3]
                     },
                     {
-                        label               : 'Digital Goods',
-                        fillColor           : 'rgba(60,141,188,0.9)',
-                        strokeColor         : 'rgba(60,141,188,0.8)',
-                        pointColor          : '#3b8bba',
-                        pointStrokeColor    : 'rgba(60,141,188,1)',
-                        pointHighlightFill  : '#fff',
+                        label: 'Digital Goods',
+                        fillColor: 'rgba(60,141,188,0.9)',
+                        strokeColor: 'rgba(60,141,188,0.8)',
+                        pointColor: '#3b8bba',
+                        pointStrokeColor: 'rgba(60,141,188,1)',
+                        pointHighlightFill: '#fff',
                         pointHighlightStroke: 'rgba(60,141,188,1)',
-                        data                : [20, 40, 10, 6, 24, 7, 3]
+                        data: [20, 40, 10, 6, 24, 7, 3]
                     }
                 ]
             }
 
             var areaChartOptions = {
                 //Boolean - If we should show the scale at all
-                showScale               : true,
+                showScale: true,
                 //Boolean - Whether grid lines are shown across the chart
-                scaleShowGridLines      : false,
+                scaleShowGridLines: false,
                 //String - Colour of the grid lines
-                scaleGridLineColor      : 'rgba(0,0,0,.05)',
+                scaleGridLineColor: 'rgba(0,0,0,.05)',
                 //Number - Width of the grid lines
-                scaleGridLineWidth      : 1,
+                scaleGridLineWidth: 1,
                 //Boolean - Whether to show horizontal lines (except X axis)
                 scaleShowHorizontalLines: true,
                 //Boolean - Whether to show vertical lines (except Y axis)
-                scaleShowVerticalLines  : true,
+                scaleShowVerticalLines: true,
                 //Boolean - Whether the line is curved between points
-                bezierCurve             : true,
+                bezierCurve: true,
                 //Number - Tension of the bezier curve between points
-                bezierCurveTension      : 0.3,
+                bezierCurveTension: 0.3,
                 //Boolean - Whether to show a dot for each point
-                pointDot                : false,
+                pointDot: false,
                 //Number - Radius of each point dot in pixels
-                pointDotRadius          : 4,
+                pointDotRadius: 4,
                 //Number - Pixel width of point dot stroke
-                pointDotStrokeWidth     : 1,
+                pointDotStrokeWidth: 1,
                 //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-                pointHitDetectionRadius : 20,
+                pointHitDetectionRadius: 20,
                 //Boolean - Whether to show a stroke for datasets
-                datasetStroke           : true,
+                datasetStroke: true,
                 //Number - Pixel width of dataset stroke
-                datasetStrokeWidth      : 2,
+                datasetStrokeWidth: 2,
                 //Boolean - Whether to fill the dataset with a color
-                datasetFill             : true,
+                datasetFill: true,
                 //String - A legend template
-                legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+                legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
                 //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-                maintainAspectRatio     : true,
+                maintainAspectRatio: true,
                 //Boolean - whether to make the chart responsive to window resizing
-                responsive              : true
+                responsive: true
             }
 
             //Create the line chart
@@ -486,49 +539,48 @@
             //-------------
             //- LINE CHART -
             //--------------
-            var lineChartCanvas          = $('#lineChart').get(0).getContext('2d')
-            var lineChart                = new Chart(lineChartCanvas)
-            var lineChartOptions         = areaChartOptions
+            var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+            var lineChart = new Chart(lineChartCanvas)
+            var lineChartOptions = areaChartOptions
             lineChartOptions.datasetFill = false
             lineChart.Line(areaChartData, lineChartOptions)
-
 
 
             //-------------
             //- BAR CHART -
             //-------------
-            var barChartCanvas                   = $('#barChart').get(0).getContext('2d')
-            var barChart                         = new Chart(barChartCanvas)
-            var barChartData                     = areaChartData
-            barChartData.datasets[1].fillColor   = '#00a65a'
+            var barChartCanvas = $('#barChart').get(0).getContext('2d')
+            var barChart = new Chart(barChartCanvas)
+            var barChartData = areaChartData
+            barChartData.datasets[1].fillColor = '#00a65a'
             barChartData.datasets[1].strokeColor = '#00a65a'
-            barChartData.datasets[1].pointColor  = '#00a65a'
-            var barChartOptions                  = {
+            barChartData.datasets[1].pointColor = '#00a65a'
+            var barChartOptions = {
                 //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
-                scaleBeginAtZero        : true,
+                scaleBeginAtZero: true,
                 //Boolean - Whether grid lines are shown across the chart
-                scaleShowGridLines      : true,
+                scaleShowGridLines: true,
                 //String - Colour of the grid lines
-                scaleGridLineColor      : 'rgba(0,0,0,.05)',
+                scaleGridLineColor: 'rgba(0,0,0,.05)',
                 //Number - Width of the grid lines
-                scaleGridLineWidth      : 1,
+                scaleGridLineWidth: 1,
                 //Boolean - Whether to show horizontal lines (except X axis)
                 scaleShowHorizontalLines: true,
                 //Boolean - Whether to show vertical lines (except Y axis)
-                scaleShowVerticalLines  : true,
+                scaleShowVerticalLines: true,
                 //Boolean - If there is a stroke on each bar
-                barShowStroke           : true,
+                barShowStroke: true,
                 //Number - Pixel width of the bar stroke
-                barStrokeWidth          : 2,
+                barStrokeWidth: 2,
                 //Number - Spacing between each of the X value sets
-                barValueSpacing         : 5,
+                barValueSpacing: 5,
                 //Number - Spacing between data sets within X values
-                barDatasetSpacing       : 1,
+                barDatasetSpacing: 1,
                 //String - A legend template
-                legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+                legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
                 //Boolean - whether to make the chart responsive
-                responsive              : true,
-                maintainAspectRatio     : true
+                responsive: true,
+                maintainAspectRatio: true
             }
 
             barChartOptions.datasetFill = false
@@ -542,4 +594,5 @@
         });
     </script>
 @endsection
+
 
