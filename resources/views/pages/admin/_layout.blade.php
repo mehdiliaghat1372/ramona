@@ -3,6 +3,20 @@
 @section('head-links')
     @parent
     <link rel="stylesheet" href="{{ asset('css/admin-general.css?v4') }}">
+    <style>
+        .box.box-danger {
+            border-top-color:
+                #007bff;
+            border-bottom-color:
+                #007bff;
+        }
+        .box.box-success {
+            border-bottom-color:
+                #007bff;
+            border-top-color:
+                #007bff;
+        }
+    </style>
 @endsection
 
 @section('content')

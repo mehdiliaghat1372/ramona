@@ -44,7 +44,7 @@ Route::get('/auth/sign-out', [
     'as' => 'auth.sign-out',
 ]);
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group([], function () {
     // Admin
     Route::group(['prefix' => '/admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
         // Dashboard
